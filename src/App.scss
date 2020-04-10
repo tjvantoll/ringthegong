@@ -1,0 +1,127 @@
+// @import 'trigonometry'; https://codepen.io/NyX/pen/dYvymM
+@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+// inspiration gong svg: https://image.flaticon.com/icons/svg/451/451939.svg
+// inspiration gong: https://cdn.iconscout.com/icon/premium/png-512-thumb/gong-1750292-1489517.png
+// #eaeaea -- sexy grey
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'VT323', monospace;
+  font-size: 30px;
+  font-weight: 900;
+  list-style: none;
+}
+
+body {
+  min-height: 100vh;
+  background-color: whitesmoke;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 10vw;
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  user-select: none;
+  cursor: default;
+  margin: 0 1rem 1rem 1rem;
+  padding: 0 0.25rem;
+}
+
+.gong {
+  margin: 0 auto;
+  cursor: url('https://p192.p3.n0.cdn.getcloudapp.com/items/ApujBPzo/gong-stick.svg?v=50024adf71e94a6a878787da09f900bb'), pointer;
+}
+
+
+.kendoka-wrapper {
+  width: 200px;
+}
+
+#mallet {
+  transform: translate(10px, 350px) rotate(-45deg) scale(8);
+}
+
+.kendoka-react_svg__st0 {
+  fill: #fff
+}
+
+.kendoka-react_svg__st1 {
+  fill: #84cef2
+}
+
+.kendoka-react_svg__st2 {
+  fill: #0c2749
+}
+
+.kendoka-react_svg__st3 {
+  fill: #fab16a
+}
+
+.kendoka-react_svg__st4 {
+  fill: #0b0204
+}
+
+
+
+// bg gradients lovingly borrowed from https://dev.to/kedar9/css-only-multi-color-backgrounds-paj
+.bg-spring {
+  --yellow: #fff810;
+  --green: #63e89e;
+  --pank: #ff7ee3;
+  --transparent: rgba(0,0,0,0);
+  --rave-color-1: var(--yellow);
+  --rave-color-2: var(--green);
+  --rave-color-3: var(--pank);
+  background:
+    linear-gradient(70deg, var(--rave-color-1) 30%, var(--transparent) 30%), 
+    linear-gradient(30deg, var(--rave-color-2) 60%, var(--rave-color-3) 60%);
+}
+.bg-rave {
+  animation-name: rave;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes rave {
+  33% {
+    background:
+      linear-gradient(70deg, var(--rave-color-2) 30%, var(--transparent) 30%), 
+      linear-gradient(30deg, var(--rave-color-3) 60%, var(--rave-color-1) 60%);
+  }
+  66% {
+    background:
+      linear-gradient(70deg, var(--rave-color-3) 30%, var(--transparent) 30%), 
+      linear-gradient(30deg, var(--rave-color-1) 60%, var(--rave-color-2) 60%);
+  }
+}
+
+.yellow-delight {
+  background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%); // yellow delight
+}
+
+.post-main {
+  fill: #FF3502;
+}
+.post-shadow {
+  fill: #CD2A01
+}
+.gong-main {
+  fill: #FECE00;
+}
+.gong-other {
+  fill: #DDB201;
+}
+
+.counter {
+  background: black;
+  color: white;
+  font-size: 2rem;
+  letter-spacing: 15px;
+  padding-left: 0.5rem;
+}

@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+
+import Gong from './components/Gong';
+import Counter from "./components/Counter";
 
 function App() {
+  const [isItRaveTime, setIsRaveTime] = React.useState(false);
+  const onGongStart = () => {
+    setIsRaveTime(true);
+  }
+  const onGongEnd = () => {
+    setIsRaveTime(false);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class={isItRaveTime ? "bg-spring bg-rave" : "bg-spring"}>
+      <h1>Mr. Milks just closed a deal!</h1>
+      <Gong onGongStart={onGongStart} onGongEnd={onGongEnd} />
+      <Counter />
     </div>
   );
 }
