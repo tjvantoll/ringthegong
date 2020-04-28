@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 export default function Gong({ onGongStart, onGongEnd }) {
-  const gongSound = new Audio('./gong.mp3');
+  const gongSound = new Audio("./gong.mp3");
   gongSound.addEventListener("ended", () => {
     console.log("ending");
     onGongEnd();
