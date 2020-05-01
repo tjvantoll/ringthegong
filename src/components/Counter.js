@@ -5,18 +5,20 @@ export default function Counter() {
   const [displayCount, setDisplayCount] = React.useState("00000000");
 
   React.useEffect(() => {
-    setInterval(() => {
       setCount((count) => {
+    // setInterval(() => {
+
         let countIWant = count + 1;
         setCount(countIWant);
         setDisplayCount(countIWant.toString().padStart(8, "0"));
       });
-    }, 1);
+
+    // }, 1);
 
   }, []);
 
   return (
-    <div class="counter">
+    <div className="counter">
       {displayCount}
     </div>
   )

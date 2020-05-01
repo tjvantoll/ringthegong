@@ -17,35 +17,51 @@
 
 body {
   min-height: 100vh;
+  margin: 0 0 200px 0;
   background-color: whitesmoke;
-  margin: 0;
-  padding: 0;
+  background-attachment: fixed;
 }
 
 h1 {
-  font-size: 10vw;
+  font-size: 7vw;
   font-family: 'Pacifico', cursive;
   text-align: center;
   user-select: none;
   cursor: default;
-  margin: 0 1rem 1rem 1rem;
+  margin: 1rem;
   padding: 0 0.25rem;
 }
 
+svg {
+  overflow: visible;
+}
+
+.togetherness {
+  position: relative;
+  max-width: 50vw;
+  margin: 0 auto;
+}
+
 .gong {
+  max-width: 800px;
+  display: block;
   margin: 0 auto;
   cursor: url('https://p192.p3.n0.cdn.getcloudapp.com/items/ApujBPzo/gong-stick.svg?v=50024adf71e94a6a878787da09f900bb'), pointer;
 }
 
-
 .kendoka-wrapper {
-  width: 200px;
+  width: 15vw;
+  position: absolute;
+  right: 90px;
+  bottom: -50px;
+  z-index: 2;
 }
 
 #mallet {
   transform: translate(10px, 350px) rotate(-45deg) scale(8);
 }
 
+// class names to customize kendoka
 .kendoka-react_svg__st0 {
   fill: #fff
 }
@@ -66,8 +82,6 @@ h1 {
   fill: #0b0204
 }
 
-
-
 // bg gradients lovingly borrowed from https://dev.to/kedar9/css-only-multi-color-backgrounds-paj
 .bg-spring {
   --yellow: #fff810;
@@ -81,6 +95,7 @@ h1 {
     linear-gradient(70deg, var(--rave-color-1) 30%, var(--transparent) 30%), 
     linear-gradient(30deg, var(--rave-color-2) 60%, var(--rave-color-3) 60%);
 }
+
 .bg-rave {
   animation-name: rave;
   animation-duration: 1s;
@@ -88,6 +103,7 @@ h1 {
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
 }
+
 @keyframes rave {
   33% {
     background:
@@ -108,20 +124,67 @@ h1 {
 .post-main {
   fill: #FF3502;
 }
+
 .post-shadow {
   fill: #CD2A01
 }
+
 .gong-main {
   fill: #FECE00;
 }
+
 .gong-other {
   fill: #DDB201;
 }
 
+// hit counter styles
+
+.counter-wrapper {
+$counter-width: 470px;
+  max-width: $counter-width;
+  display: flex;
+  align-items: center;
+
+
+  position: absolute;
+  top: .2vw;
+  left: calc(50% - 235px);
+
+  // left: calc(100% - $counter-width);
+}
+
 .counter {
-  background: black;
+  font-size: 4vw;
+
+  // background: black;
   color: white;
-  font-size: 2rem;
   letter-spacing: 15px;
   padding-left: 0.5rem;
+}
+
+@media all and (max-width: 1450px) {
+  .counter-wrapper {
+    position: relative;
+  }
+  .counter {
+    font-size: 5vw;
+  }
+}
+
+@media all and (max-width: 1100px) {
+  .counter-wrapper {
+    position: inherit;
+    flex-direction: column;
+    width: 470px;
+    margin: 0 auto;
+  }
+  .counter {
+    font-size: 7vw;
+  }
+}
+
+@media all and (max-width: 1100px) {
+  .counter-wrapper {
+    width: 100%;
+  }
 }
