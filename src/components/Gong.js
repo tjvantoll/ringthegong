@@ -19,8 +19,8 @@ export default function Gong({ onGongStart, onGongEnd }) {
 
   return (
     <svg onClick={playGong} xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" className="gong">
-      <line x1="45" y1="20" x2="105" y2="250" stroke="black" stroke-width="10" />
-      <line x1="460" y1="20" x2="400" y2="250" stroke="black" stroke-width="10" />
+      <line x1="45" y1="20" x2="105" y2="250" stroke="black" strokeWidth="10" />
+      <line x1="460" y1="20" x2="400" y2="250" stroke="black" strokeWidth="10" />
 
       <g id="post">
         <rect className="post-main" x="32" y="7" width="439" height="34" />

@@ -16,7 +16,7 @@ export default function Counter() {
   }, []);
 
   return (
-    <div class="counter">
+    <div className="counter">
       {displayCount}
     </div>
   )
