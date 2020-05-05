@@ -18,12 +18,16 @@
 body {
   min-height: 100vh;
   background-color: whitesmoke;
-  margin: 0;
+  @extend .bg-spring;
   padding: 0;
+
+  // Pushing body bg below kendoka feet
+  margin: 0;
+  margin-bottom: 200px;
 }
 
 h1 {
-  font-size: 10vw;
+  font-size: 7vw;
   font-family: 'Pacifico', cursive;
   text-align: center;
   user-select: none;
@@ -32,16 +36,72 @@ h1 {
   padding: 0 0.25rem;
 }
 
+svg{
+  overflow: visible;
+}
+
+.gong-wrapper {
+  max-width: 50vw;
+  position: relative;
+  margin: 0 auto;
+}
+
 .gong {
   margin: 0 auto;
   cursor: url('https://p192.p3.n0.cdn.getcloudapp.com/items/ApujBPzo/gong-stick.svg?v=50024adf71e94a6a878787da09f900bb'), pointer;
 }
 
-
 .kendoka-wrapper {
-  width: 200px;
+  width: 15vw;
+  position: absolute;
+  right: 5vw;
+  bottom: -5vh;
 }
 
+// counter styles vv
+
+.counter-wrapper {
+  $counter-width: 470px;
+  max-width: $counter-width;
+  display: flex;
+  align-items: center;
+  color: white;
+
+  position: absolute;
+  top: .5vw;
+  left: calc(50% - #{$counter-width}/2);
+}
+
+.counter {
+  font-size: 4vw;
+  // background: black;
+  font-size: 2rem;
+  letter-spacing: 15px;
+  padding-left: 0.5rem;
+}
+
+@media all and (max-width: 1450px) {
+ .counter-wrapper {
+   position: relative;
+ }
+ .counter {
+   font-size: 5vw;
+ }
+}
+
+@media all and (max-width: 1100px) {
+  .counter-wrapper {
+    width: 470px;
+    text-align: center;
+    flex-direction: column;
+  }
+ .counter {
+   font-size: 7vw;
+ }
+}
+
+
+// kendoka SVG styles vv
 #mallet {
   transform: translate(10px, 350px) rotate(-45deg) scale(8);
 }
@@ -116,12 +176,4 @@ h1 {
 }
 .gong-other {
   fill: #DDB201;
-}
-
-.counter {
-  background: black;
-  color: white;
-  font-size: 2rem;
-  letter-spacing: 15px;
-  padding-left: 0.5rem;
 }

@@ -3,22 +3,26 @@ import './App.scss';
 
 import Gong from './components/Gong';
 import Counter from "./components/Counter";
+import Kendoka from "./components/Kendoka";
 
 function App() {
-  const [isItRaveTime, setIsRaveTime] = React.useState(false);
   const onGongStart = () => {
-    setIsRaveTime(true);
+    document.body.classList.add('bg-rave');
   }
   const onGongEnd = () => {
-    setIsRaveTime(false);
+    document.body.classList.remove('bg-rave');
   }
 
   return (
-    <div class={isItRaveTime ? "bg-spring bg-rave" : "bg-spring"}>
+    <>
       <h1>Mr. Milks just closed a deal!</h1>
-      <Gong onGongStart={onGongStart} onGongEnd={onGongEnd} />
-      <Counter />
-    </div>
+      
+      <div class="gong-wrapper">
+        <Counter />
+        <Kendoka />
+        <Gong onGongStart={onGongStart} onGongEnd={onGongEnd} />
+      </div>
+   </>
   );
 }
 
