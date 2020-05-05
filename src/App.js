@@ -5,7 +5,18 @@ import Gong from './components/Gong';
 import Counter from "./components/Counter";
 import Kendoka from "./components/Kendoka";
 
+import { getSaleInfo, getSaleId } from "./services/data";
+
 function App() {
+  const [message, setMessage] = React.useState("");
+
+  React.useEffect(() => {
+    getSaleInfo(getSaleId()).then(doc => {
+      const data = doc.data();
+      setMessage(`${data.salesreps} just closed a deal with ${data.client}!`);
+    })
+  }, []);
+
   const onGongStart = () => {
     document.body.classList.add('bg-rave');
   }
@@ -15,9 +26,9 @@ function App() {
 
   return (
     <>
-      <h1>Mr. Milks just closed a deal!</h1>
+      <h1>{message}</h1>
       
-      <div class="gong-wrapper">
+      <div className="gong-wrapper">
         <Counter />
         <Kendoka />
         <Gong onGongStart={onGongStart} onGongEnd={onGongEnd} />

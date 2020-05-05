@@ -1,25 +1,22 @@
 import React from 'react';
 
+import { getSaleSnapshot } from "../services/data";
+
 export default function Counter() {
-  const [count, setCount] = React.useState(0);
-  const [displayCount, setDisplayCount] = React.useState("00000000");
+  const [count, setCount] = React.useState("00000000");
 
   React.useEffect(() => {
-    // setInterval(() => {
-      setCount((count) => {
-        let countIWant = count + 1;
-        setCount(countIWant);
-        setDisplayCount(countIWant.toString().padStart(8, "0"));
-      });
-    // }, 1);
-
+    getSaleSnapshot((doc) => {
+      const data = doc.data();
+      setCount(data.count.toString().padStart(8, "0"));
+    });
   }, []);
 
   return (
-    <div class="counter-wrapper">
+    <div className="counter-wrapper">
       <p>Gongs:</p>
       <div className="counter">
-        {displayCount}
+        {count}
       </div>
     </div>
   )

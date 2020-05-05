@@ -1,13 +1,16 @@
 import React from 'react';
 
+import { incrementCount } from "../services/data";
+
 export default function Gong({ onGongStart, onGongEnd }) {
   const gongSound = new Audio('./gong.mp3');
   gongSound.addEventListener("ended", () => {
-    console.log("ending");
     onGongEnd();
   });
 
-  const playGong = () => {
+  const handleGongClick = () => {
+    incrementCount();
+
     // THANK YOU JONATHAN CREAD, YOU ROCK
     if (gongSound.paused) {
       gongSound.play();
@@ -18,7 +21,7 @@ export default function Gong({ onGongStart, onGongEnd }) {
   }
 
   return (
-    <svg onClick={playGong} xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" className="gong">
+    <svg onClick={handleGongClick} xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" className="gong">
       <line x1="45" y1="20" x2="105" y2="250" stroke="black" strokeWidth="10" />
       <line x1="460" y1="20" x2="400" y2="250" stroke="black" strokeWidth="10" />
 
