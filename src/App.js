@@ -5,12 +5,17 @@ import Gong from './components/Gong';
 import Counter from "./components/Counter";
 import Kendoka from "./components/Kendoka";
 
-import { getSaleInfo } from "./services/data";
+import { getSaleInfo, getSaleId } from "./services/data";
 
 function App() {
   const [message, setMessage] = React.useState("");
 
   React.useEffect(() => {
+    if (!getSaleId()) {
+      setMessage("Error retrieving data");
+      return;
+    }
+
     getSaleInfo().then(doc => {
       const data = doc.data();
       setMessage(`${data.salesreps} just closed a deal with ${data.client}!`);

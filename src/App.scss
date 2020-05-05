@@ -71,6 +71,7 @@ svg{
   position: absolute;
   top: .5vw;
   left: calc(50% - #{$counter-width}/2);
+  user-select: none;
 }
 
 .counter {
