@@ -1,13 +1,13 @@
-// import React from 'react';
-// import { render } from '@testing-library/react';
-// import App from './App';
+import App from './App';
+import { render } from '@testing-library/react';
 import { getLargestItem } from './sample';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+//import ReactDOM from 'react-dom';
 
 it('has empty state on load', () => {
-  expect(true).toBe(false);
+  const { getByText } = render(<App />);
+  const hElement = getByText(/Error retrieving data/i);
+  expect(hElement).toBeInTheDocument();
 });
 
 test('kata', () => {
@@ -25,6 +25,3 @@ test('kata', () => {
   
 });
 
-// const { getByText } = render(<App />);
-// const linkElement = getByText(/learn react/i);
-// expect(linkElement).toBeInTheDocument();
