@@ -16,7 +16,7 @@ export function getSaleSnapshot(callback) {
     .onSnapshot(callback);
 }
 
-export function incrementCount(id) {
+export function incrementCount() {
   const db = firebase.firestore();
   db
     .collection("wins")

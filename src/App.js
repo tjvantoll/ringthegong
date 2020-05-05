@@ -5,13 +5,13 @@ import Gong from './components/Gong';
 import Counter from "./components/Counter";
 import Kendoka from "./components/Kendoka";
 
-import { getSaleInfo, getSaleId } from "./services/data";
+import { getSaleInfo } from "./services/data";
 
 function App() {
   const [message, setMessage] = React.useState("");
 
   React.useEffect(() => {
-    getSaleInfo(getSaleId()).then(doc => {
+    getSaleInfo().then(doc => {
       const data = doc.data();
       setMessage(`${data.salesreps} just closed a deal with ${data.client}!`);
     })
