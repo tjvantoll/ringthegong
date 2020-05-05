@@ -1,10 +1,6 @@
-// @import 'trigonometry'; https://codepen.io/NyX/pen/dYvymM
 @import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 
-// inspiration gong svg: https://image.flaticon.com/icons/svg/451/451939.svg
-// inspiration gong: https://cdn.iconscout.com/icon/premium/png-512-thumb/gong-1750292-1489517.png
-// #eaeaea -- sexy grey
 
 * {
   margin: 0;
@@ -18,10 +14,7 @@
 body {
   min-height: 100vh;
   background-color: whitesmoke;
-  @extend .bg-spring;
   padding: 0;
-
-  // Pushing body bg below kendoka feet
   margin: 0;
   margin-bottom: 200px;
 }
@@ -59,24 +52,20 @@ svg{
   bottom: -5vh;
 }
 
-// counter styles vv
-
 .counter-wrapper {
-  $counter-width: 470px;
-  max-width: $counter-width;
+  max-width: 470px;
   display: flex;
   align-items: center;
   color: white;
 
   position: absolute;
   top: .5vw;
-  left: calc(50% - #{$counter-width}/2);
+  left: calc(50% - 235px);
   user-select: none;
 }
 
 .counter {
   font-size: 4vw;
-  // background: black;
   font-size: 2rem;
   letter-spacing: 15px;
   padding-left: 0.5rem;
@@ -103,7 +92,6 @@ svg{
 }
 
 
-// kendoka SVG styles vv
 #mallet {
   transform: translate(10px, 350px) rotate(-45deg) scale(8);
 }
@@ -129,8 +117,6 @@ svg{
 }
 
 
-
-// bg gradients lovingly borrowed from https://dev.to/kedar9/css-only-multi-color-backgrounds-paj
 .bg-spring {
   --yellow: #fff810;
   --green: #63e89e;
@@ -164,7 +150,7 @@ svg{
 }
 
 .yellow-delight {
-  background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%); // yellow delight
+  background: linear-gradient(110deg, #fdcd3b 60%, #ffed4b 60%);
 }
 
 .post-main {
