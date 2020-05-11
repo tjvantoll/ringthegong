@@ -50,16 +50,12 @@ function App() {
     document.body.classList.remove('bg-rave');
   }
 
-  const showTooltip = () => {
-
-  }
-
   return (
     <>
       <h1>{message}</h1>
-      <h2 onMouseOver={showTooltip}>
-        <span class="emoji-bg">
-          <span class="emoji">{emoji}</span>
+      <h2>
+        <span className="emoji-bg" title={user}>
+          <span className="emoji">{emoji}</span>
         </span>
         {user}
       </h2>
