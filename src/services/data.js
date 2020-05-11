@@ -8,6 +8,15 @@ export function getSaleInfo() {
     .get();
 }
 
+export function getGongWatcher(callback) {
+  const db = firebase.firestore();
+  return db
+    .collection("wins")
+    .doc(getSaleId())
+    .collection("gongs")
+    .onSnapshot(callback);
+}
+
 export function getSaleSnapshot(callback) {
   const db = firebase.firestore();
   return db
@@ -18,12 +27,20 @@ export function getSaleSnapshot(callback) {
 
 export function incrementCount() {
   const db = firebase.firestore();
-  db
+  const doc = db
     .collection("wins")
-    .doc(getSaleId())
-    .update({
-      count: firebase.firestore.FieldValue.increment(1)
+    .doc(getSaleId());
+
+  doc.update({
+    count: firebase.firestore.FieldValue.increment(1)
+  }).then(() => {
+    doc
+    .collection("gongs")
+    .doc()
+    .set({
+      name: "Whoever"
     });
+  });
 }
 
 export function getSaleId() {

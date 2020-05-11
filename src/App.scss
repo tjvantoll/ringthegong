@@ -37,6 +37,23 @@ h1 {
   min-height: 160px;
 }
 
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.emoji-bg {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: white;
+  display: inline-block;
+  margin-right: 5px;
+}
+.emoji {
+  font-size: 0.7rem;
+}
+
 svg{
   overflow: visible;
 }

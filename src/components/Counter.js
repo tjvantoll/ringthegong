@@ -9,10 +9,12 @@ export default function Counter() {
     if (!getSaleId()) {
       return ;
     }
-    getSaleSnapshot((doc) => {
+    /*
+    getSaleSnapshot(doc => {
       const data = doc.data();
       setCount(data.count.toString().padStart(8, "0"));
     });
+    */
   }, []);
 
   return (

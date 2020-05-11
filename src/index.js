@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import firebase from "@firebase/app";
 import "@firebase/firestore";
 
+/*
 firebase.initializeApp({
   apiKey: "AIzaSyBTz2FtoUf5OSAFrfuHZcOtXIDUe4FzjeY",
   authDomain: "ringthegong-6053d.firebaseapp.com",
@@ -15,6 +16,7 @@ firebase.initializeApp({
   messagingSenderId: "763262754645",
   appId: "1:763262754645:web:b9b48577a84ddac484d9dc"
 });
+*/
 
 ReactDOM.render(
   <React.StrictMode>
