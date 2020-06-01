@@ -33,6 +33,11 @@ export function incrementCount() {
 
   doc.update({
     count: firebase.firestore.FieldValue.increment(1)
+  });
+
+  /*
+  doc.update({
+    count: firebase.firestore.FieldValue.increment(1)
   }).then(() => {
     doc
     .collection("gongs")
@@ -41,6 +46,7 @@ export function incrementCount() {
       name: "Whoever"
     });
   });
+  */
 }
 
 export function getSaleId() {
