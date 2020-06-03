@@ -60,6 +60,36 @@ h2 {
   font-size: 0.7rem;
 }
 
+// style random numbers
+ul.names {
+  z-index: -1;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+}
+
+ul.names li {
+  position: absolute;
+}
+
+@for $i from 1 through 50 {
+  ul.names li:nth-child(#{$i}) {
+    $randomNumber: random();
+
+    @if $randomNumber > 0.5 {
+      right: percentage($randomNumber - 0.5);
+    } @else {
+      left: percentage($randomNumber); 
+    }
+
+    top: percentage(random());
+    // left: calc(#{percentage(random())} - #{$max-width-half});
+    transform: rotate(#{random(90)-45deg});
+  }
+}
+
 svg {
   overflow: visible;
 }
