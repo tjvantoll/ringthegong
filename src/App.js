@@ -53,6 +53,34 @@ function App() {
     document.body.classList.remove('bg-rave');
   }
 
+  const people = [
+    { id: 11, name: 'Twighlight Sparkle' },
+    { id: 12, name: 'Pinkie Pie' },
+    { id: 13, name: 'Gummy' },
+    { id: 14, name: 'Fluttershy' },
+    { id: 15, name: 'Rainbow Dash' },
+    { id: 16, name: 'Rarity' },
+    { id: 17, name: 'Princess Celestia' },
+    { id: 18, name: 'Applejack' },
+    { id: 19, name: 'Princess Luna' },
+    { id: 20, name: 'Spike' },
+    { id: 21, name: 'Scootaloo' },
+    { id: 22, name: 'Discord' },
+    { id: 23, name: 'Sweetie Belle' },
+    { id: 24, name: 'Shinning Armor' },
+    { id: 25, name: 'Trixie' },
+    { id: 26, name: 'Derpy Hooves' },
+    { id: 27, name: 'Big McIntosh' },
+    { id: 28, name: 'Snips' },
+    { id: 29, name: 'Diamond Tiara' },
+    { id: 30, name: 'Granny Smith' },
+    { id: 31, name: 'Apple Bloom' },
+    { id: 32, name: 'Babs Seed' },
+    { id: 33, name: 'Goldie Delicious' },
+    { id: 34, name: 'Maud Pie' },
+
+  ];
+
   return (
     <>
       <h1>{message}</h1>
@@ -64,7 +92,13 @@ function App() {
         {user}
       </h2>
       */}
+      {/* add temporary names for styling */}
       <div className="gong-wrapper">
+        <ul class="names">
+          {people.map((person) => {
+            return <li>{person.name}</li>
+          })}
+        </ul>
         <Counter />
         <Kendoka />
         <Gong onGongStart={onGongStart} onGongEnd={onGongEnd} />
